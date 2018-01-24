@@ -1,0 +1,13 @@
+version: '2'
+services:
+    postgres:
+      image: mdillon/postgis:9.6
+      container_name: severe_weather_db
+      ports:
+        - "5434:5432"
+      volumes:
+        - ./pg_data:/data
+        - ./sqlScripts/:/sqlScripts/
+      env_file: "../config/postgres.env.docker"
+      environment:
+        - PGDATA=/data
