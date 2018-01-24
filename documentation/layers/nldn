@@ -1,0 +1,45 @@
+Vaisala National Lightning Detection Network (NLDN)
+----------------------------------------------------------------------------------- 
+  Info
+----------------------------------------------------------------------------------- 
+  These are lightning strike flash events from the Vaisala National Lightning 
+  Detection Network (NLDN).  The lightning flash data is available through a 
+  cooperative effort with the U.S. Air Force 14th Weather Squadron and contains 
+  an archive of the Vaisala National Lightning Detection Network (NLDN) data from 
+  1986 to present. Through a contract with Vaisala, the raw data from NCDC is 
+  available only to government and military users, while summarized data may
+  be distributed to all.
+      
+  =========================
+  =  DISTRIBUTION NOTICE  =
+  =========================
+  The lightning flash data is available through a cooperative effort with the 
+  U.S. Air Force 14th Weather Squadron and Vaisala.  The contract only allows 
+  distribution of the raw data from NCDC to .gov and .mil users.  A .gov or .mil 
+  user may not redistribute the raw data to non-.gov or non-.mil users.  The raw 
+  data is defined as containing the exact location and time of the flash event.  
+  Summarized data (number of flashes per day in region 'x') may be distributed to all.
+        
+  =========================
+      
+      
+----------------------------------------------------------------------------------- 
+  NCDC Documentation      
+----------------------------------------------------------------------------------- 
+  http://www.ncdc.noaa.gov/oa/documentlibrary/index.php?choice=dsi&searchstring=9603&submitted=1&submitted=Search
+
+----------------------------------------------------------------------------------- 
+  Accuracy
+----------------------------------------------------------------------------------- 
+  From the NLDN brochure on: http://www.vaisala.com/weather/products/aboutnldn.html
+ 
+  The NLDN provides:
+    Thunderstorm detection efficiency in excess of 99%
+    Flash detection efficiency approaching 95%
+    Median location accuracy of 500m or better
+    Network uptimes nearing 99.99%
+    Data feed uptimes of better than 99.9%
+    Event timing precision of 1 microsecond RMS
+    Accurate peak current measurements resulting from magnetic detection methods
+
+

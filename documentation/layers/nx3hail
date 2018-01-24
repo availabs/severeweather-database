@@ -1,0 +1,125 @@
+NEXRAD Level III Data Products
+----------------------------------------------------------------------------------- 
+  Info
+----------------------------------------------------------------------------------- 
+  The National Weather Service (NWS) Doppler (NEXRAD) radar system estimates the 
+intensity, position, velocity, and type of moisture in the atmosphere. Each radar 
+site includes equipment and software that searches this basic precipitation data 
+for patterns that estimate the presence (or likelyhood thereof) of various kinds 
+of severe weather events. The datasets derived from this processing are called 
+"NEXRAD Level III" products. SWDI currently provides access to the following 5 
+such products: 
+   1) Hail Index Overlay (HI) - A product designed to locate storms which have 
+      the potential to produce hail.
+      
+   2) Mesocyclone Overlay (M) - This legacy product is designed to display information 
+      regarding the existence and nature of rotations associated with thunderstorms. 
+      Numerical output includes azimuth, range, and height of the mesocyclone.
+      
+   3) Storm Structure (SS) - A product designed to display information on storm 
+      attributes which include maximum reflectivity, maximum velocity at lowest 
+      elevation angle, storm overhang, mass weighted storm volume, storm area 
+      base and top, storm position and storm tilt.
+      
+   4) Tornadic Vortex Signature Overlay (TVS) - A product which shows an intense 
+      gate to gate azimuthal shear associated with tornadic-scale rotation.
+      
+   5) Digital Mesocyclone Detection Algorithm (MD) - This product is the 
+      sucessor to the legacy Mesocyclone (M) product and is designed to display information 
+      regarding the existence and nature of rotations associated with thunderstorms. 
+      Numerical output includes azimuth, range, and height of the mesocyclone.
+
+----------------------------------------------------------------------------------- 
+  Column Definitions and Units
+-----------------------------------------------------------------------------------
+NEXRAD Level-III Hail 'nx3hail' Dataset: 
+   WSR_ID  - "NEXRAD or TDWR SITE ID"
+   CELL_ID - "CELL ID UNIQUE TO RADAR SITE" 
+   PROB    - "PROBABILITY OF HAIL [PERCENT]" 
+   SEVPROB - "PROB. OF SEVERE HAIL [PERCENT]" 
+   MAXSIZE - "MAX SIZE [IN]"
+   
+NEXRAD Level-III Legacy Mesocyclone 'nx3meso' Dataset: 
+   WSR_ID      - "NEXRAD or TDWR SITE ID"
+   CELL_ID     - "CELL ID UNIQUE TO RADAR SITE" 
+   CELL_TYPE   - "'MESO', '3DC SHR' or 'UNC SHR'
+   RANGE       - "RANGE [NAUT. MI]" 
+   AZIMUTH     - "AZIMUTH [DEG]"
+   BASE_HEIGHT - "BASE HEIGHT OF FEATURE [KFT]"
+   HEIGHT      - "HEIGHT OF FEATURE [KFT]"
+   RADIAL_DIAM - "DIAMETER OF FEATURE ALONG RANGE AXIS FROM RADAR SITE [NMI]"
+   AZ_DIAM     - "DIAMETER OF FEATURE IN AZIMUTH ANGLE FROM RADAR SITE [DEG]"
+   SHEAR       - "SHEAR [E-3/S]"
+    
+NEXRAD Level-III Storm Structure 'nx3structure' Dataset: 
+   WSR_ID  - "NEXRAD or TDWR SITE ID"
+   CELL_ID - "CELL ID UNIQUE TO RADAR SITE" 
+   RANGE   - "RANGE [NAUT. MI]" 
+   AZIMUTH - "AZIMUTH [DEG]"
+   VIL     - "VERT. INTEG. LIQUID [KG/M**2]"
+   MAX_REFLECT - "MAX REFLECTIVITY [DBZ]"
+      
+NEXRAD Level-III Tornado Vortex Signature (TVS) 'nx3tvs' Dataset: 
+   WSR_ID  - "NEXRAD or TDWR SITE ID"
+   CELL_ID - "CELL ID UNIQUE TO RADAR SITE" 
+   RANGE   - "RANGE [NAUT. MI]" 
+   AZIMUTH - "AZIMUTH [DEG]"
+   MAX_SHEAR - "MAX SHEAR [E-3/s]"
+   MXDV    - "MXDV [KT]"       
+
+NEXRAD Level-III Digital Mesocyclone Detection Algorithm 'nx3mda' Dataset: 
+   WSR_ID   - "NEXRAD or TDWR SITE ID"
+   CELL_ID  - "CELL ID UNIQUE TO RADAR SITE"
+   STR_RANK - "STRENGTH RANKING"
+   SCIT_ID  - "ID FROM SCIT ALGORITHM (USED IN OTHER NEXRAD PRODUCTS)"
+   RANGE    - "RANGE [NAUT. MI]" 
+   AZIMUTH  - "AZIMUTH [DEG]"
+   LL_ROT_VEL - "LOW LEVEL RV [KT]" 
+   LL_DV      - "LOW LEVEL DV [KT]"
+   LL_BASE    - "BASE [KFT]" 
+   DEPTH_KFT  - "DEPTH [KT]" 
+   DPTH_STMRL - "STMREL [PERCENT]" 
+   MAX_RV_KFT - "MAX RV HEIGHT [KFT]" 
+   MAX_RV_KTS - "MAX RV [KT]"
+   TVS        - "TVS [Y OR N]" 
+   MOTION_DEG - "MOTION DIR. [DEG]" 
+   MOTION_KTS - "MOTION SPEED [KTS]" 
+   MSI        - "MSI"
+
+      
+----------------------------------------------------------------------------------- 
+  NCDC Documentation      
+----------------------------------------------------------------------------------- 
+http://www.ncdc.noaa.gov/oa/documentlibrary/index.php?choice=dsi&searchstring=7000&submitted=1&submitted=Search
+
+
+----------------------------------------------------------------------------------- 
+  Accuracy
+----------------------------------------------------------------------------------- 
+  These NEXRAD Level III products (HI, M, SS, TVS) contain several possible sources 
+of inaccuracies.  The spatial accuracy of the data decreases with the range from 
+the source NEXRAD Radar site.  The general spatial accuracy of these data is 1 deg 
+(theta) by 1 km (r), in the polar coordinate system centered on the Radar site where 
+'theta' is the angle from North and 'r' is the distance from the Radar site.  This 
+1 deg x 1 km spacing equates to a range of spatial accuracies from 1 km (near Radar 
+site) to 4 km (at 230 km from Radar site).
+
+  Other factors contribute to the accuracy of these products and algorithms.  The 
+algorithms often rely on several different 'sweeps' at different elevation angles 
+to determine hail, rotation, etc...  Fewer sweeps are available at far distances from 
+the NEXRAD site, resulting in less input data to the algorithm and possibly less 
+accurate results.  Mountainous areas can cause beam blockage at lower elevation 
+angles, which compounds these issues.  Furthermore, there are many adaptable 
+parameters set by the Radar operator which are adjusted and 'tuned' for each weather 
+situation or season.  Variation of these values can cause additional inconsistencies.  
+    
+  Even with these accuracy issues, the dataset is helpful in finding areas of bad 
+weather and can be used in combination with other datasets (such as verified Storm 
+Events) to add confidence to the values.
+
+  More information about, and access to, the complete set of NEXRAD radar products
+is available at http://www.ncdc.noaa.gov/oa/radar. 
+
+
+
+

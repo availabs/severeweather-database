@@ -1,0 +1,15 @@
+{
+  "name": "severeweather-database",
+  "version": "0.0.1",
+  "description": "Database containing data from NOAA's Severe Weather Data Inventory",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Tomchik",
+  "license": "MIT",
+  "dependencies": {
+    "ftp": "^0.3.10",
+    "mkdirp": "^0.5.1"
+  }
+}

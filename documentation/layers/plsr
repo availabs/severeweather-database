@@ -1,0 +1,30 @@
+Preliminary Local Storm Reports
+----------------------------------------------------------------------------------- 
+  Info
+----------------------------------------------------------------------------------- 
+  These are PRELIMINARY storm reports extracted from the NCDC Service Records
+Retention System (SRRS).  The reports are considered preliminary and should be
+treated as such.  Real-time reports are available from the NOAA Storm Prediction
+Center ( http://www.spc.noaa.gov/climo/ )
+      
+----------------------------------------------------------------------------------- 
+  NCDC Documentation      
+----------------------------------------------------------------------------------- 
+http://www.ncdc.noaa.gov/oa/documentlibrary/index.php?choice=dsi&searchstring=9957&submitted=1&submitted=Search
+
+----------------------------------------------------------------------------------- 
+  Accuracy
+----------------------------------------------------------------------------------- 
+  This product contains unverified reports of severe weather communicated to NWS 
+Forecast Offices by local law enforcement, media, and the public. All of the 
+information in these reports (such as hail size, tornado magnitude, etc) is 
+visually estimated and reported by humans and therefore inconsistent in accuracy. 
+This data has not been verified by the NWS --- this product is simply a listing of 
+everything reported to the NWS.
+
+The Preliminary Local Storm Reports dataset is 'preliminary'.  The exact 
+coordinates may be erroneous and the descriptions and magnitudes may not be 
+accurate.  The verified NCDC Storm Events database should be used when possible to 
+verify the event.
+
+
