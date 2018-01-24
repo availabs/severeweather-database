@@ -8,7 +8,10 @@ const { sync: mkdirpSync } = require('mkdirp');
 
 const DATA_DIR = join(__dirname, '../../data/');
 
-const SQL_DIR = join(__dirname, '../../generated-sql/');
+// For safety, writes to a temporary directory
+// After edits made, user should manually move them to sql/dir
+//  and remove the tmp dir
+const TMP_SQL_DIR = join(__dirname, '../../tmp-generated-sql/');
 
 const writeFileAsync = promisify(writeFile);
 const readdirAsync = promisify(readdir);
@@ -22,7 +25,7 @@ async function generateDDL() {
 
     const csvDir = join(DATA_DIR, tableName);
 
-    const sqlDir = join(SQL_DIR, tableName);
+    const sqlDir = join(TMP_SQL_DIR, tableName);
     if (existsSync(sqlDir)) {
       console.log(`${tableName} SQL exists.`);
       continue;
@@ -53,6 +56,13 @@ async function generateDDL() {
     const largestCSVPath = join(csvDir, largestCSVName);
 
     const createTableSQL = await new Promise((resolve, reject) => {
+      // The create table SQL pipeline:
+      //   1. inflate the gzipped file and pipe to stdout
+      //   2. take only the first 10K lines
+      //   3. Remove the comments before the header line (Comments contain whitespace)
+      //        & remove the hash from before the header line
+      //   4. Use csvsql to generate a draft create table ddl statement
+      //   5. In the generated DDL, change the column names to lowercase and remove the quotes
       exec(
         `
       gunzip -c ${largestCSVPath} |\
