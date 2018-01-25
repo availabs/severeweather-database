@@ -21,9 +21,10 @@ async function generateDDL() {
   const dirs = await readdirAsync(DATA_DIR);
 
   for (let i = 0; i < dirs.length; ++i) {
-    const tableName = dirs[i];
+    const dirName = dirs[i];
+    const tableName = dirName.replace(/-/g, '_');
 
-    const csvDir = join(DATA_DIR, tableName);
+    const csvDir = join(DATA_DIR, dirName);
 
     const sqlDir = join(TMP_SQL_DIR, tableName);
     if (existsSync(sqlDir)) {
@@ -62,15 +63,24 @@ async function generateDDL() {
       //   3. Remove the comments before the header line (Comments contain whitespace)
       //        & remove the hash from before the header line
       //   4. Use csvsql to generate a draft create table ddl statement
-      //   5. In the generated DDL, change the column names to lowercase and remove the quotes
+      //   5. In the generated DDL,
+      //        a. change the column names to lowercase
+      //        b. remove the quotes
+      //        c. remove the size contraints on VARCHARs
+      //        d. remove the size contraints on VARCHARs
+
+      // csvsql -i postgresql --tables ${tableName} |\
+      // sed 's/\\("[A-Z_0-9]\\+"\\)/\\L\\1/; s/\\"//g; s/([0-9]\\+)//g; s/ NOT NULL//g'
+
       exec(
         `
-      gunzip -c ${largestCSVPath} |\
-      head -n 10000 |\
-      sed '/^#.* .*$/d; s/#//g;' |\
-      csvsql -i postgresql |\
-      sed 's/\\("[A-Z_0-9]\\+"\\)/\\L\\1/; s/\\"//g'
-    `,
+        cat \
+          <(gunzip -c ${largestCSVPath} | sed '/^#.* .*$/d; s/#//g;' | head -n1) \
+          <(for f in *.gz; do gunzip -c "$f" | sed '/^#.* .*$/d' | tail -n+2 | head -n10000; done) |\
+        csvsql -i postgresql --tables ${tableName} --no-constraints |\
+        sed 's/\\("[A-Z_0-9]\\+"\\)/\\L\\1/; s/\\"//g;'
+        `,
+        { shell: '/bin/bash', cwd: csvDir },
         (err, stdout) => {
           if (err) {
             return reject(err);

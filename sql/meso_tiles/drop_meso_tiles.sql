@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS meso_tiles CASCADE;

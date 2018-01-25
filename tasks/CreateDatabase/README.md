@@ -1,9 +1,7 @@
 - [x] Generate DDL
-- [ ] Alter generated DDL
-  - [x] Remove VARCHAR size constraints for all but codes
-  - [ ] Change VARCHAR to geometries/geographies where appropriate
 
 - [ ] Create ALTER Table DDL
+  - [ ] Change VARCHAR to geometries/geographies where appropriate
   - [ ] Add timestamp columns to appropriate tables
   - [ ] Table partitioning
   - [ ] Indices

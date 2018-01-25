@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS tvs_tiles CASCADE;
