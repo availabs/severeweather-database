@@ -10,7 +10,7 @@ DATADIR="$(readlink -e ../../../data/severe_weather/fatalities)"
 
 psql -f ./create_fatalities.sql
 
-find "$DATADIR" -type f |
+find -L "$DATADIR" -type f |
 sort |
 while read f
 do
