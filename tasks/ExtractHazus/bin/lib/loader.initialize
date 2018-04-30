@@ -1,0 +1,10 @@
+LOAD DATABASE
+     FROM mssql://SA:MSSQL_SA_PASSWORD@MSSQL_IP_ADDRESS:MSSQL_TCP_PORT/hazus
+     INTO postgresql://PGUSER:PGPASSWORD@PGHOST:PGPORT/hazus
+   WITH schema only
+ BEFORE LOAD DO
+   $$ drop schema if exists dbo cascade; $$,
+   $$ drop schema if exists hazus cascade; $$
+ AFTER LOAD DO
+   $$ ALTER schema dbo RENAME TO hazus; $$
+;
