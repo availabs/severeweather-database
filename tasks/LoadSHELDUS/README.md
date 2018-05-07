@@ -16,4 +16,4 @@
 1. # inspect the generated SQL and Bash files.
 2. `mv csv ../../data/sheldus`
 3. `mv tmp-sql ../../sql/sheldus`
-4. find ../../sql/sheldus -type f -name 'loader.sh' -exec {} \;
+4. `find ../../sql/sheldus -type f -name 'loader.sh' -exec {} \;`
