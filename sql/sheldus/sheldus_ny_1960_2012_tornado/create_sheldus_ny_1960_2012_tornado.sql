@@ -1,0 +1,14 @@
+BEGIN;
+
+CREATE SCHEMA IF NOT EXISTS sheldus;
+
+CREATE TABLE sheldus.sheldus_ny_1960_2012_tornado (
+	county VARCHAR, 
+	sum_of_fatalities DECIMAL, 
+	sum_of_injuries DECIMAL, 
+	sum_of_property_damage DECIMAL, 
+	sum_of_crop_damage DECIMAL
+);
+
+COMMIT;
+

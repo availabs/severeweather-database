@@ -1,0 +1,369 @@
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_wind.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_wind" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_winter.sql:3: NOTICE:  table "sheldus_ny_1960_2012_winter" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_winter.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_extreme_temp.sql:3: NOTICE:  table "hazard_loss_extreme_temp" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_extreme_temp.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_flood.sql:3: NOTICE:  table "sheldus_ny_1960_2012_flood" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_flood.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_sheldus_ny_1960_2012.sql:3: NOTICE:  table "sheldus_ny_1960_2012_sheldus_ny_1960_2012" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_sheldus_ny_1960_2012.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 33962
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_xheat.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_xheat" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_xheat.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_wildfire.sql:3: NOTICE:  table "sheldus_ny_1960_2012_wildfire" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_wildfire.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_avalanche.sql:3: NOTICE:  table "sheldus_ny_1960_2012_avalanche" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_avalanche.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_hurricane.sql:3: NOTICE:  table "hazard_loss_hurricane" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_hurricane.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_drought.sql:3: NOTICE:  table "hazard_loss_drought" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_drought.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_coastal.sql:3: NOTICE:  table "hazard_loss_coastal" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_coastal.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_wind.sql:3: NOTICE:  table "hazard_loss_wind" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_wind.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_tsunami.sql:3: NOTICE:  table "sheldus_ny_1960_2012_tsunami" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_tsunami.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_flood.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_flood" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_flood.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_dam.sql:3: NOTICE:  table "sheldus_ny_1960_2012_dam" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_dam.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_coastal.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_coastal" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_coastal.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_hail.sql:3: NOTICE:  table "sheldus_ny_1960_2012_hail" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_hail.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_drought.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_drought" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_drought.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_blank_table.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_blank_table" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_blank_table.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_hurricane.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_hurricane" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_hurricane.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_hurricane.sql:3: NOTICE:  table "sheldus_ny_1960_2012_hurricane" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_hurricane.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_drought.sql:3: NOTICE:  table "sheldus_ny_1960_2012_drought" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_drought.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_heat.sql:3: NOTICE:  table "sheldus_ny_1960_2012_heat" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_heat.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_hail.sql:3: NOTICE:  table "hazard_loss_hail" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_hail.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_tornado.sql:3: NOTICE:  table "sheldus_ny_1960_2012_tornado" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_tornado.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_wildfire.sql:3: NOTICE:  table "hazard_loss_wildfire" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_wildfire.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_winter.sql:3: NOTICE:  table "hazard_loss_winter" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_winter.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_landslide.sql:3: NOTICE:  table "hazard_loss_landslide" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_landslide.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazard_loss_flood.sql:3: NOTICE:  table "hazard_loss_flood" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazard_loss_flood.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_landslide.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_landslide" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_landslide.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_xcold.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_xcold" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_xcold.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_hail.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_hail" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_hail.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_winter.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_winter" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_winter.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_coastal.sql:3: NOTICE:  table "sheldus_ny_1960_2012_coastal" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_coastal.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_landslide.sql:3: NOTICE:  table "sheldus_ny_1960_2012_landslide" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_landslide.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_sheldus_ny_1960_2012_wind.sql:3: NOTICE:  table "sheldus_ny_1960_2012_wind" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_sheldus_ny_1960_2012_wind.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
+BEGIN
+psql:./drop_hazards_loss_1960_2012_sheldus_combinedx.sql:3: NOTICE:  table "hazards_loss_1960_2012_sheldus_combinedx" does not exist, skipping
+DROP TABLE
+COMMIT
+BEGIN
+psql:./create_hazards_loss_1960_2012_sheldus_combinedx.sql:3: NOTICE:  schema "sheldus" already exists, skipping
+CREATE SCHEMA
+CREATE TABLE
+COMMIT
+COPY 62
