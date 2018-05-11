@@ -1,0 +1,6 @@
+BEGIN;
+
+DROP TABLE IF EXISTS sheldus.wildfire_sheldus_10312013 CASCADE;
+
+COMMIT;
+
