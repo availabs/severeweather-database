@@ -30,4 +30,6 @@ do
   fi
 done
 
+psql -f ./createGeometryCols.sql
+
 popd >/dev/null

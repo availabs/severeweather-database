@@ -24,4 +24,6 @@ do
   "
 done
 
+psql -f ./createGeometryCols.sql
+
 popd >/dev/null
