@@ -21,6 +21,7 @@ do
     COPY \"severe_weather_data\".details_${YEAR} (${header})
       FROM STDIN WITH CSV HEADER;
   "
+  sed "s/__YEAR__/$YEAR/g" ./optimize_details.sql | psql 
 done
 
 psql -f ./createGeometryCols.sql
