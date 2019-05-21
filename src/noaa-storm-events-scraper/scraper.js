@@ -1,8 +1,41 @@
 #!/usr/bin/env node
 
+/* eslint no-await-in-loop: 0, no-console: 0 */
+
 const { createWriteStream } = require('fs');
 const { join } = require('path');
+const yargs = require('yargs');
 const { sync: mkdirpSync } = require('mkdirp');
+
+const { argv } = yargs
+  .strict()
+  .parserConfiguration({
+    'camel-case-expansion': false,
+    'flatten-duplicate-arrays': false
+  })
+  .wrap(yargs.terminalWidth() / 1.618)
+  .option({
+    dataStartYear: {
+      type: 'number',
+      demand: false,
+      desc: 'Data startYear',
+      default: 1990
+    },
+    dataEndYear: {
+      type: 'number',
+      demand: false,
+      desc: 'Data startYear',
+      default: new Date().getFullYear()
+    },
+    updatedSince: {
+      type: 'string',
+      demand: false,
+      desc: 'Date in YYYY-MM-DD format.',
+      default: null
+    }
+  });
+
+const { dataStartYear, dataEndYear, updatedSince } = argv;
 
 const CONFIG = require('./config.json');
 
@@ -10,78 +43,70 @@ const STORM_EVENTS_DIR = 'pub/data/swdi/stormevents/csvfiles';
 
 const DATA_DIR = join(__dirname, '../../data/');
 
-const SE_DIR = join(DATA_DIR, 'stormevents');
-
 const SE_DETAILS_DIR = join(DATA_DIR, 'details');
-const SE_FATALITIES_DIR = join(DATA_DIR, 'fatalities');
-const SE_LOCATIONS_DIR = join(DATA_DIR, 'locations');
 
 mkdirpSync(SE_DETAILS_DIR);
-mkdirpSync(SE_FATALITIES_DIR);
-mkdirpSync(SE_LOCATIONS_DIR);
 
-const eventToDir = {
-  details: SE_DETAILS_DIR,
-  fatalities: SE_FATALITIES_DIR,
-  locations: SE_LOCATIONS_DIR
-};
+const Client = require('ftp');
 
-const eventRE = new RegExp(Object.keys(eventToDir).join('|'));
+const c = new Client();
 
-var Client = require('ftp');
-
-var c = new Client();
-
-async function scrapeEventsCSVs() {
-  await new Promise((resolve1, reject1) => {
-    c.list(STORM_EVENTS_DIR, async function(err, list) {
-      if (err) return reject1(err);
-
-      for (let i = 0; i < list.length; ++i) {
-        const file = list[i];
-
-        if (!(file.name && file.name.match)) {
-          continue;
-        }
-
-        const dir = eventToDir[file.name.match(eventRE)];
-
-        if (!dir) {
-          continue;
-        }
-
-        const yearMatch = file.name.match(/_d(\d{4})/);
-        const year = yearMatch && parseInt(yearMatch[1]);
-
-        if (dir && year >= 1990) {
-          const ftpPath = join(STORM_EVENTS_DIR, file.name);
-          const csvPath = join(dir, file.name);
-
-          console.log(file.name);
-
-          await new Promise((resolve2, reject2) => {
-            c.get(ftpPath, function(err, stream) {
-              if (err) {
-                console.error(err);
-                process.exit(1);
-              }
-
-              stream.once('close', function() {
-                setTimeout(resolve2, 500);
-              });
-              stream.pipe(createWriteStream(csvPath));
-            });
-          });
-        }
-      }
-      resolve1();
-    });
-  });
+const updatedSinceDate =
+  updatedSince && new Date(`${updatedSince}T00:00:00.000Z`);
+if (updatedSinceDate && Number.isNaN(updatedSinceDate.valueOf())) {
+  console.error(`INVALID updatedSince: ${updatedSince}`);
+  process.exit(1);
 }
 
-c.on('ready', async function() {
+async function scrapeEventsCSVs() {
+  const list = await new Promise((resolve, reject) => {
+    c.list(STORM_EVENTS_DIR, (err, d) => {
+      if (err) {
+        return reject(err);
+      }
+
+      return resolve(d);
+    });
+  });
+
+  const details = list.filter(({ name, date }) => {
+    const isDetailsFile = name.match(/StormEvents_details-ftp/);
+    const dataRecentEnough = date >= updatedSinceDate;
+    const [, yearMatch] = name.match(/_d(\d{4})/) || [];
+    const year = yearMatch && Number.parseInt(yearMatch, 10);
+    const withinYearRange = year >= dataStartYear && year <= dataEndYear;
+
+    return isDetailsFile && dataRecentEnough && withinYearRange;
+  });
+
+  console.table(details.map(({ name, date, size }) => ({ name, date, size })));
+
+  for (let i = 0; i < details.length; ++i) {
+    const file = details[i];
+    const ftpPath = join(STORM_EVENTS_DIR, file.name);
+    const csvPath = join(SE_DETAILS_DIR, file.name);
+
+    console.log(file.name);
+
+    await new Promise((resolve, reject) => {
+      c.get(ftpPath, (err, stream) => {
+        if (err) {
+          return reject(err);
+        }
+
+        stream.once('close', () => setTimeout(resolve, 500));
+
+        stream.pipe(createWriteStream(csvPath));
+
+        return null;
+      });
+    });
+  }
+}
+
+c.connect(CONFIG);
+
+c.on('ready', async () => {
   await scrapeEventsCSVs();
   c.end();
 });
-
-c.connect(CONFIG);

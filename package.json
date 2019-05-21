@@ -11,13 +11,15 @@
   "dependencies": {
     "findit": "^2.0.0",
     "ftp": "^0.3.10",
-    "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "node-env-file": "^0.1.8"
+    "node-env-file": "^0.1.8",
+    "yargs": "^13.2.4"
   },
   "devDependencies": {
     "eslint": "^4.16.0",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.8.0",
+    "prettier": "^1.17.1"
   }
 }
