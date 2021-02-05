@@ -25,18 +25,19 @@ CLUSTER "severe_weather_data_staging".details___YEAR__ USING details_geoid___YEA
 
 COMMIT;
 
--- Cannot happen in a transaction
-ANALYZE "severe_weather_data".details___YEAR__;
+-- Cannot be called within a transaction
+ANALYZE "severe_weather_data_staging".details___YEAR__;
 
 BEGIN;
 
-CREATE SCHEMA IF NOT EXISTS severe_weather_data_backups;
+CREATE SCHEMA IF NOT EXISTS "severe_weather_data_backups";
 
 ALTER TABLE IF EXISTS "severe_weather_data".details___YEAR__
   NO INHERIT "severe_weather".details,
+  RENAME TO details___YEAR__backup_:TIMESTAMP,
   SET SCHEMA "severe_weather_data_backups";
 
 ALTER TABLE "severe_weather_data_staging".details___YEAR__
-  NO INHERIT "severe_weather".details;
+  INHERIT "severe_weather".details;
 
 COMMIT;
