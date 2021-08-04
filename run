@@ -43,14 +43,17 @@ yargs
         default: null
       }
     },
-    handler: ({ startYear, updatedSince }) => {
+    handler: ({ dataStartYear, dataEndYear, updatedSince }) => {
       spawn(
         './src/noaa-storm-events-scraper/scraper.js',
-        [`"${startYear} ${updatedSince}"`],
+        [
+          `--dataStartYear=${dataStartYear}`,
+          `--dataEndYear=${dataEndYear}`,
+          `--updatedSince=${updatedSince}`
+        ],
         {
           cwd: __dirname,
           stdio: 'inherit'
-          // env: { YEAR: year, COUNTRY: country, PG_ENV: pg_env }
         }
       );
     }
